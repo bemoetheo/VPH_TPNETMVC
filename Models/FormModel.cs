@@ -13,9 +13,9 @@ namespace TPLOCAL1.Models
         public string sexe { get; set; }
         [Required(ErrorMessage = "Veuillez saisir votre adresse")]
         public string adresse { get; set; }
-        [Required(ErrorMessage = "Veuillez saisir votre nom")] 
+        [Required(ErrorMessage = "Veuillez saisir une code postale")] 
         [RegularExpression(@"^[0-9]+$", ErrorMessage = "Code postale non valide")]
-        [StringLength(5, ErrorMessage = "Veuillez saisir votre nom")]
+        [StringLength(5, ErrorMessage = "Code postale non valide")]
         public string codePostale { get; set; }
         [Required(ErrorMessage = "Veuillez saisir une ville")]
         public string ville { get; set; }
@@ -27,7 +27,7 @@ namespace TPLOCAL1.Models
         public DateTime dateDebut { get; set; }
         [Required]
         public string formation { get; set; }
-        public string formationCobol { get; set; }
-        public string formationCSharp { get; set; }
+        public string? formationCobol { get; set; }
+        public string? formationCSharp { get; set; }
     }
 }
