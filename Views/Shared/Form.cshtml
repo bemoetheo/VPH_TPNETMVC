@@ -1,0 +1,93 @@
+﻿@model TPLOCAL1.Models.FormModel
+@Html.ValidationSummary(false,"")
+
+
+<head>
+    <link rel="stylesheet" href="~/resources/Form.css" />
+    <title>HN - TP LOCAL - FORM</title>
+</head>
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Formulaire TP HN avis</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/Home/Index/OpinionList">Liste avis</a></li>
+        </ul>
+    </nav>
+    <section>
+        <form asp-controller="Home" asp-action="ValidationFormulaire">
+            <table class="FormSection">
+                <caption>Information personnelles</caption>
+                <tr>
+                    <td><label>Nom</label></td>
+                    <td><input asp-for="nom" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td><input asp-for="prenom" /></td>
+                </tr>
+                <tr>
+                    <td><label>Sexe</label></td>
+                    <td>
+                        <select asp-for="sexe">
+                            <option>Selectionner un sexe</option>
+                            <option>Homme</option>
+                            <option>Femme</option>
+                            <option>Autre</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Adresse</label></td>
+                    <td><input asp-for="adresse" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label>Code postale</label></td>
+                    <td><input asp-for="codePostale" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label>Ville</label></td>
+                    <td><input asp-for="ville" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label>Adress mail</label></td>
+                    <td><input asp-for="courriel" type="text" /></td>
+                </tr>
+            </table>
+            <table class="FormSection">
+                    <caption>Information formation suivie</caption>
+                <tr>
+                    <td><label>Date de début</label></td>
+                    <td><input asp-for="dateDebut" type="date" value="" max="@DateTime.Now.ToString("yyyy-MM-dd")" min="1980-01-01" /></td>
+                </tr>
+                <tr>
+                    <td><label>Type de formation</label></td>
+                    <td>
+                        <select asp-for="formation">
+                            <option>Selectionner une formation</option>
+                            <option>Formation Cobol</option>
+                            <option>Formation Objet</option>
+                            <option>Formation Double Compétence</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table class="FormSection">
+                    <caption>Avis sur la formation</caption>
+                <tr>
+                    <td><label>Formation Cobol</label></td>
+                    <td><input asp-for="formationCobol" type="text" /></td>
+                </tr>
+                <tr>
+                    <td><label>Formation C#</label></td>
+                    <td><input asp-for="formationCSharp" type="text" /></td>
+                </tr>
+            </table>
+            <br />
+            <input type="submit" value="Valider" />
+        </form>
+    </section>
+</body>

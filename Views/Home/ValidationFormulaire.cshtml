@@ -1,0 +1,79 @@
+﻿@model TPLOCAL1.Models.FormModel
+@Html.ValidationSummary(false,"")
+
+
+<head>
+    <link rel="stylesheet" href="~/resources/Form.css" />
+    <title>HN - TP LOCAL - FORM</title>
+</head>
+<body>
+    <header>
+        <img src="~/resources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Page de validation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/Home/Index/OpinionList">Liste avis</a></li>
+        </ul>
+    </nav>
+    <section>
+        <p>Votre formulaire a bien été pris en compte</p>
+        <form asp-controller="Home" asp-action="ValidationFormulaire">
+            <table class="FormSection">
+                    <caption>Information personnelles</caption>
+                <tr>
+                    <td><label>Nom</label></td>
+                    <td>@Model.nom</td>
+                </tr>
+                <tr>
+                    <td>Prénom</td>
+                    <td>@Model.prenom</td>
+                </tr>
+                <tr>
+                    <td><label>Sexe</label></td>
+                    <td>@Model.sexe</td>
+                </tr>
+                <tr>
+                    <td><label>Adresse</label></td>
+                    <td>@Model.adresse</td>
+                </tr>
+                <tr>
+                    <td><label>Code postale</label></td>
+                    <td>@Model.codePostale</td>
+                </tr>
+                <tr>
+                    <td><label>Ville</label></td>
+                    <td>@Model.ville</td>
+                </tr>
+                <tr>
+                    <td><label>Adress mail</label></td>
+                    <td>@Model.courriel</td>
+                </tr>
+            </table>
+            <table class="FormSection">
+                    <caption>Information formation suivie</caption>
+                <tr>
+                    <td><label>Date de début</label></td>
+                    <td>@Model.dateDebut.ToString("dd/MM/yyyy")</td>
+                </tr>
+                <tr>
+                    <td><label>Type de formation</label></td>
+                    <td>@Model.formation</td>
+                </tr>
+            </table>
+            <table class="FormSection">
+                    <caption>Avis sur la formation</caption>
+                <tr>
+                    <td><label>Formation Cobol</label></td>
+                    <td>@Model.formationCobol</td>
+                </tr>
+                <tr>
+                    <td><label>Formation C#</label></td>
+                    <td>@Model.formationCSharp</td>
+                </tr>
+            </table>
+            <br />
+        </form>
+    </section>
+</body>
